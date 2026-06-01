@@ -4,7 +4,7 @@ A modern React-based frontend for the E-Kart e-commerce platform, providing a re
 
 ## Live Demo
 
-Frontend: [Add Frontend URL]
+Frontend: e-kart-one.vercel.app
 
 ---
 
