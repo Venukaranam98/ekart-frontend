@@ -4,9 +4,9 @@ export const HeaderContainer = styled.header`
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: rgba(10, 10, 15, 0.8);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background-color: rgba(10, 10, 15, 0.75);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
   padding: 12px 0;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 `;
@@ -23,12 +23,12 @@ export const HeaderContent = styled.div`
 `;
 
 export const Logo = styled.div`
-  font-family: var(--font-family-base);
-  font-size: 20px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30px;
   font-weight: var(--font-weight-heavy);
   color: var(--color-on-dark);
   text-transform: uppercase;
-  letter-spacing: -0.5px;
+  letter-spacing: 1.5px;
   cursor: pointer;
   white-space: nowrap;
   order: 1;
@@ -57,8 +57,27 @@ export const DesktopNavMenu = styled.nav`
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
 
-    &:hover, &.active {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: var(--color-primary);
+      transition: width 0.3s ease;
+    }
+
+    &:hover,
+    &.active {
       color: var(--color-primary);
+    }
+
+    &:hover::after,
+    &.active::after {
+      width: 100%;
     }
   }
 `;
@@ -99,7 +118,8 @@ export const SidebarMenu = styled.div`
   right: 0;
   height: 100vh;
   width: 280px;
-  background-color: #0d0d12;
+  background: rgba(10, 10, 15, 0.98);
+  backdrop-filter: blur(20px);
   z-index: 1100;
   box-shadow: -8px 0 32px rgba(0, 0, 0, 0.4);
   transform: ${(props) => (props.$isOpen ? "translateX(0)" : "translateX(100%)")};
@@ -184,6 +204,7 @@ export const Actions = styled.div`
       display: block;
       color: var(--color-on-dark);
       background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       text-decoration: none;
       font-size: 12px;
       font-weight: var(--font-weight-bold);

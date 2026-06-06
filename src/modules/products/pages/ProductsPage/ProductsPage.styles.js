@@ -67,7 +67,7 @@ export const HeaderSection = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-family: var(--font-family-base);
+  font-family: 'Bebas Neue', sans-serif;
   font-size: 22px;
   font-weight: var(--font-weight-heavy);
   color: var(--color-on-dark);

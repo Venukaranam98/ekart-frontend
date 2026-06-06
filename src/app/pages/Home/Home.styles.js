@@ -128,11 +128,11 @@ export const Eyebrow = styled.span`
 `;
 
 export const Title = styled.h1`
-  font-family: var(--font-family-base);
+  font-family: 'Bebas Neue', sans-serif;
   font-size: 42px;
   font-weight: var(--font-weight-heavy);
   line-height: 1.1;
-  letter-spacing: -2px;
+  letter-spacing: 2px;
   color: var(--color-on-dark);
   margin-bottom: var(--spacing-lg);
   text-transform: uppercase;

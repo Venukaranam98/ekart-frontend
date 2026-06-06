@@ -13,7 +13,7 @@ const globalCss = css`
     --color-on-dark: #ffffff;
 
     /* Typography */
-    --font-family-base: Vodafone, 'Vodafone Rg', 'Helvetica Neue', Arial, sans-serif;
+    --font-family-base: system-ui, sans-serif;
     
     /* Font Sizes */
     --font-size-display-hero: 144px;
