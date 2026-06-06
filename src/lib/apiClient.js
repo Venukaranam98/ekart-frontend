@@ -14,6 +14,7 @@ export const apiClient = async (
 
   const token =
     localStorage.getItem("access_token");
+  console.log("TOKEN:", token);
 
   const defaultHeaders = {
     "Content-Type": "application/json",
@@ -24,6 +25,7 @@ export const apiClient = async (
       "Authorization"
     ] = `Bearer ${token}`;
   }
+  console.log("HEADERS:", defaultHeaders);
 
   const config = {
     ...options,
