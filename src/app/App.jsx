@@ -6,14 +6,30 @@ import { Global } from "@emotion/react";
 import { globalCss } from "./GlobalStyles.styles";
 import Footer from "../shared/components/Footer/Footer";
 
-export default function App() {
+import { useLocation } from "react-router-dom";
+
+function AppContent() {
+  const location = useLocation();
+
+  const hideFooter =
+    location.pathname === "/login" ||
+    location.pathname === "/signup";
+
   return (
-    <Providers>
+    <>
       <Global styles={globalCss} />
       <Header />
       <AppRouter />
-      <Footer />
+      {!hideFooter && <Footer />}
       <CartDrawer />
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <Providers>
+      <AppContent />
     </Providers>
   );
 }

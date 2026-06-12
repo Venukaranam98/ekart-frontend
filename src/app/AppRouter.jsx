@@ -1,4 +1,5 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
+
 import NotFoundPage from "./pages/NotFoundPage";
 import HomePage from "./pages/Home";
 
@@ -14,14 +15,28 @@ import AddressPage from "../modules/address/pages/AddressPage";
 import PaymentPage from "../modules/payment/pages/PaymentPage";
 
 export default function AppRouter() {
+  const token = localStorage.getItem("access_token");
+
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
+      <Route
+        path="/"
+        element={
+          token ? (
+            <Navigate to="/products" replace />
+          ) : (
+            <Navigate to="/login" replace />
+          )
+        }
+      />
+
+      <Route path="/home" element={<HomePage />} />
 
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
 
       <Route path="/products" element={<ProductsPage />} />
+
       <Route
         path="/products/:id"
         element={<ProductDetailsPage />}
@@ -33,7 +48,7 @@ export default function AppRouter() {
 
       <Route path="/payment" element={<PaymentPage />} />
 
-      <Route path="* " element={<NotFoundPage />} />
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 }

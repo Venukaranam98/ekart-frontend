@@ -33,7 +33,8 @@ export const Section = styled.div`
 export const Footer = styled.footer`
   background: #0a0a0f;
   color: white;
-  margin-top: 80px;
+  margin-top: 0;
+  padding-bottom: 40px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   overflow: hidden;
   position: relative;
